@@ -3,7 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Цей код визначає клас C# CalculationSettings у просторі імен SPP.Core.Models. Цей клас визначає кілька статичних рядкових констант,
+/// які представляють параметри частоти: щодня, через день (EOD), щотижня, через тиждень (EOW), щомісяця та щокварталу.
 
+///Цей клас також визначає статичний об’єкт FrequencyOptionsDictionary, доступний лише для читання, під назвою OPTIONS. 
+///FrequencyOptionsDictionary — це настроюваний словник, який зіставляє назви опцій частоти з об’єктами FrequencyOptions, які 
+///представляють різні параметри обчислення для кожної опції частоти.
+
+///Об’єкти FrequencyOptions створюються для кожного параметра частоти та додаються до OPTIONS за допомогою конструктора 
+///List<FrequencyOptions> словника FrequencyOptionsDictionary. Кожен об’єкт FrequencyOptions визначає різні параметри обчислення для 
+///відповідного параметра частоти, наприклад кількість днів використання, доставки, буфера, середнього використання, тривалості циклу та 
+///днів до критичної нестачі.
+
+///Метою цього класу є забезпечення централізованого розташування для зберігання та доступу до налаштувань обчислень, пов’язаних із 
+///різними параметрами частоти. Інші частини програми можуть отримати доступ до цих параметрів, посилаючись на статичні члени класу 
+///CalculationSettings. Наприклад, CalculationSettings.FREQUENCY_MONTHLY поверне рядок «Monthly», 
+///а CalculationSettings.OPTIONS[FREQUENCY_MONTHLY] поверне об’єкт FrequencyOptions із відповідними параметрами розрахунку для щомісячної 
+///частоти.
+/// </summary>
 namespace SPP.Core.Models
 {
 	public class CalculationSettings
